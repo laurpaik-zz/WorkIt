@@ -2,13 +2,11 @@
 
 const success = (data) => {
   if (data) {
-    console.log(data);
   }
 };
 
 const signInSuccess = (data) => {
   if (data) {
-    console.log("ID: " + data.id, ", Email: " + data.email);
   }
 
   // $('#sign-in').hide();
@@ -31,7 +29,6 @@ const signInFailure = (error) => {
 
 const signUpSuccess = (data) => {
   if (data) {
-    console.log(data);
   }
   // $('#sign-up').hide();
 };
