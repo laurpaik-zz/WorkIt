@@ -7,15 +7,18 @@ const success = (data) => {
 
 const signInSuccess = (data) => {
   if (data) {
-  }
 
-  // $('#sign-in').hide();
-  // $('#sign-up').hide();
-  // $('#change-password').show();
-  // $('#sign-out').show();
-  // $('#begin').show();
-  // $('#game-search').show();
-  // $('#search-result').show();
+  }
+  $('#enter-password').val('sign in');
+  $('#sign-up-button').val('sign up');
+  $('.inputs').val('');
+  $('#sign-in').hide();
+  $('#sign-up').hide();
+  $('#change-password').show();
+  $('#sign-out').show();
+  $('#begin').show();
+  $('#game-search').show();
+  $('#search-result').show();
 };
 
 const failure = (error) => {
@@ -30,7 +33,7 @@ const signInFailure = (error) => {
 const signUpSuccess = (data) => {
   if (data) {
   }
-  // $('#sign-up').hide();
+  $('#sign-up').hide();
 };
 
 const emailFailure = (error) => {

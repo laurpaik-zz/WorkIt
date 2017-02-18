@@ -14,6 +14,11 @@ $(() => {
 require('./example');
 
 const auth = require('./auth/events');
+const firstScreen = require('./login-screen-events.js');
+
+$(() => {
+  firstScreen.addHandlers();
+});
 
 $(() => {
   auth.addHandlers();
