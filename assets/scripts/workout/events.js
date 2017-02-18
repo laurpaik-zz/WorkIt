@@ -1,70 +1,44 @@
 'use strict';
 
-const getFormFields = require(`../../../lib/get-form-fields`);
-
-const api = require('./api');
-const ui = require('./ui');
-
+const api = require('./api.js');
+const ui = require('./ui.js');
 const store = require('../store');
 
-const onSignUp = function (event) {
+const getFormFields = require('../../../lib/get-form-fields');
+
+const onCreateWorkout = function (event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
-
-  api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.emailFailure)
-    ;
-};
-
-const onSignIn = function (event) {
-  event.preventDefault();
-
-  let data = getFormFields(event.target);
-
-  api.signIn(data)
+  api.create(data)
     .then((response) => {
-      store.user = response.user;
-      return store.user;
+      store.workout = response.workout;
     })
-    .then(ui.signInSuccess)
-    .catch(ui.signInFailure)
-    ;
+    .then(ui.onPostSuccess)
+    .catch(ui.onError);
 };
 
-const onChangePassword = function (event) {
+const onGetWorkouts = function (event) {
   event.preventDefault();
-
   let data = getFormFields(event.target);
 
-  api.changePassword(data)
-    .then(ui.success)
-    .catch(ui.failure)
-    ;
+  if (data.workout.id.length === 0) {
+    api.index()
+    .then(ui.onIndexSuccess)
+    .catch(ui.onError);
+  } else {
+    api.show(data.workout.id)
+    .then(ui.onGetSuccess)
+    .catch(ui.onError);
+  }
 };
 
-const onSignOut = function (event) {
-  event.preventDefault();
-
-  api.signOut()
-  .then(() => {
-    delete store.user;
-    return store;
-  })
-  .then(ui.success)
-  .catch(ui.failure)
-  ;
-};
-
-const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp);
-  $('#sign-in').on('submit', onSignIn);
-  $('#change-password').on('submit', onChangePassword);
-  $('#sign-out').on('submit', onSignOut);
-};
+// const addHandlers = () => {
+//   $('#search-submit').on('submit', onGetGames);
+// };
 
 module.exports = {
-  addHandlers,
-  onSignIn,
+  onCreateWorkout,
+  onGetWorkouts,
+  // addHandlers,
 };

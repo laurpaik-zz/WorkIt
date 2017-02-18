@@ -2,6 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
+const workoutEvents = require('./workout/events');
 
 $(() => {
   setAPIOrigin(location, config);
@@ -22,4 +23,8 @@ $(() => {
 
 $(() => {
   auth.addHandlers();
+});
+
+$(() => {
+  $('#submit-workout').on('submit', workoutEvents.onCreateWorkout);
 });
