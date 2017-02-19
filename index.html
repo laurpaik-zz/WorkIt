@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>WorkIt</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -97,29 +97,34 @@
           </fieldset>
         </form>
       </div>
-      <form id="create-workout">
-        <fieldset>
-          <legend>create workout</legend>
-          <div class="create-label">
-            <label>
-              Name of Workout
-            </label>
-            <div class="name-input">
-              <input type="text" name="workout[name]" class="logs">
-            </div>
-          </div>
-          <!-- <div class="log-label">
-            <label>
-              Date of Workout
-            </label>
-            <div class="date-input">
-              <input type="date" name="workout[log]" class="logs">
-            </div>
-          </div> -->
-          <div class="create-submit">
-            <input type="submit" name="submit" id="submit-workout" value="create workout">
-          </div>
-        </fieldset>
+      <form class='logs' id="log-search">
+        <div class="form-group">
+          <input type="text" name="log[id]" id="log-id" placeholder="Resource ID Here">
+        </div>
+        <button type="submit" class="btn btn-default">Get Logs</button>
+      </form>
+
+      <form class='delete-log' id="log-destroy">
+        <div class="form-group">
+          <input type="text" name="log[id]" placeholder="Delete Resource ID Here">
+        </div>
+        <button type="submit" class="btn btn-default">Delete Log</button>
+      </form>
+
+      <form class='update-log' id="edit-log">
+        <div class="form-group">
+          <input type="text" name="log[id]" placeholder="ID">
+          <input type="date" name="log[date]" placeholder="Date">
+        </div>
+        <button type="submit" class="btn btn-default">Update Log</button>
+      </form>
+
+      <form class='create-log' id="post-log">
+        <div class="form-group">
+          <input type="date" name="log[date]" placeholder="Date">
+          <input type="text" name="log[workout]" placeholder="Workout">
+        </div>
+        <button type="submit" class="btn btn-default">Create Log</button>
       </form>
     </body>
 </html>
