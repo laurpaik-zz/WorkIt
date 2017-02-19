@@ -14,29 +14,22 @@ const create = function (data) {
   });
 };
 
-const index = function () {
-  return $.ajax({
-    url: config.apiOrigin + '/athletes',
-    method: 'GET',
-    headers: {
-      Authorization: `Token token=${store.user.token}`,
-    },
-  });
-};
-
-const show = function (id) {
+const update = function (id, given_name, surname, date_of_birth) {
   return $.ajax({
     url: config.apiOrigin + '/athletes/' + id,
-    method: 'GET',
+    method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
+    data: {
+      given_name: given_name,
+      surname: surname,
+      date_of_birth: date_of_birth,
+    }
   });
 };
 
 module.exports = {
-  index,
-  show,
   create,
-  // update,
+  update,
 };

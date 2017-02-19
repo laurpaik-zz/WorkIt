@@ -33,7 +33,7 @@ const onUpdateLog = function (event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
-  api.patch(data.log.id, data)
+  api.update(data)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError);
 };

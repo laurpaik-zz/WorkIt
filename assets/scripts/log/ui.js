@@ -17,8 +17,8 @@ const onDeleteSuccess = function () {
   console.log('Log was successfully deleted.');
 };
 
-const onUpdateSuccess = function () {
-  console.log('Log was successfully patched.');
+const onUpdateSuccess = function (data) {
+  console.log(data.log);
 };
 
 const onCreateSuccess =function() {

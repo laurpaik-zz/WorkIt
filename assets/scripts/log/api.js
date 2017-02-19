@@ -47,7 +47,7 @@ const update = function (id, data) {
 
 const destroy = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/books/' + id,
+    url: config.apiOrigin + '/logs/' + id,
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
