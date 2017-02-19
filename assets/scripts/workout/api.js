@@ -3,16 +3,16 @@
 const config = require('../config.js');
 const store = require('../store.js');
 
-const create = function (data) {
-  return $.ajax({
-    url: config.apiOrigin + '/workouts',
-    method: 'POST',
-    headers: {
-      Authorization: `Token token=${store.user.token}`,
-    },
-    data,
-  });
-};
+// const create = function (data) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/workouts',
+//     method: 'POST',
+//     headers: {
+//       Authorization: `Token token=${store.user.token}`,
+//     },
+//     data,
+//   });
+// };
 
 const index = function () {
   return $.ajax({
@@ -37,6 +37,6 @@ const show = function (id) {
 module.exports = {
   index,
   show,
-  create,
+  // create,
   // update,
 };
