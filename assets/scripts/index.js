@@ -2,7 +2,8 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
-const workoutEvents = require('./workout/events');
+const logEvents = require('./log/events');
+// const workoutEvents = require('./workout/events');
 
 $(() => {
   setAPIOrigin(location, config);
@@ -19,12 +20,6 @@ const firstScreen = require('./login-screen-events.js');
 
 $(() => {
   firstScreen.addHandlers();
-});
-
-$(() => {
   auth.addHandlers();
-});
-
-$(() => {
-  $('#submit-workout').on('submit', workoutEvents.onCreateWorkout);
+  logEvents.addHandlers();
 });
