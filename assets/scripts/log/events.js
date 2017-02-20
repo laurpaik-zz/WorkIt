@@ -9,7 +9,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 const onCreateLog = function (event) {
   event.preventDefault();
 
-  $('#hidden-athlete').val(store.user.id);
+  $('#hidden-athlete').val(store.athlete.id);
   let data = getFormFields(event.target);
   api.create(data)
     .then((response) => {
