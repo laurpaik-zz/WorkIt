@@ -25,7 +25,8 @@ const onDeleteSuccess = function () {
 };
 
 const onUpdateSuccess = function (data) {
-  console.log(data.log);
+  if (data) {
+  }
 };
 
 const onCreateSuccess =function() {

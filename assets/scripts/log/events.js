@@ -48,7 +48,7 @@ const onUpdateLog = function (event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
-  api.update(store.log.id, data)
+  api.update(data.log.id, data)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError);
 };
