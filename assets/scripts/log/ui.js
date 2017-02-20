@@ -1,11 +1,18 @@
 'use strict';
 
+const indexLogsHandlebars = require('../templates/helpers/index-logs.handlebars');
+
 const onSuccess = function (data) {
   //  debugger;
   if (data.log) {
     console.log(data.log);
   } else {
     console.table(data.logs);
+    $('.view').css('display', 'initial');
+    $('.view').text('');
+
+    let indexLogsHtml = indexLogsHandlebars({ logs: data.log });
+    $('.view').html(indexLogsHtml);
   }
 };
 
