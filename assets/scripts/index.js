@@ -4,6 +4,8 @@ const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 const logEvents = require('./log/events');
 const athleteEvents = require('./athletes/events');
+const auth = require('./auth/events');
+const firstScreen = require('./login-screen-events.js');
 // const workoutEvents = require('./workout/events');
 
 $(() => {
@@ -15,9 +17,6 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 require('./example');
-
-const auth = require('./auth/events');
-const firstScreen = require('./login-screen-events.js');
 
 $(() => {
   firstScreen.addHandlers();

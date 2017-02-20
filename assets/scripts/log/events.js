@@ -2,8 +2,21 @@
 
 const api = require('./api.js');
 const ui = require('./ui.js');
+const store = require('../store');
 
 const getFormFields = require('../../../lib/get-form-fields');
+
+const onCreateLog = function (event) {
+  event.preventDefault();
+
+  let data = getFormFields(event.target);
+  api.create(data)
+    .then((response) => {
+      store.log = response.log;
+    })
+    .then(ui.onCreateSuccess)
+    .catch(ui.onError);
+};
 
 const onGetLogs = function (event) {
   event.preventDefault();
@@ -33,17 +46,8 @@ const onUpdateLog = function (event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
-  api.update(data)
+  api.update(store.log.id, data)
     .then(ui.onUpdateSuccess)
-    .catch(ui.onError);
-};
-
-const onCreateLog = function (event) {
-  event.preventDefault();
-
-  let data = getFormFields(event.target);
-  api.post(data)
-    .then(ui.onCreateSuccess)
     .catch(ui.onError);
 };
 
