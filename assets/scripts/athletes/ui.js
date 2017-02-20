@@ -5,11 +5,11 @@ const onError = function (response) {
 };
 
 const onCreateSuccess = function (data) {
-  console.log(data.athlete);
+  console.log(data);
 };
 
 const onUpdateSuccess = function (data) {
-  console.log(data.athlete);
+  console.log(data);
 };
 
 module.exports = {

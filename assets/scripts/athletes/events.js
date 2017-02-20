@@ -21,8 +21,8 @@ const onCreateAthlete = function (event) {
 const onUpdateAthlete = function (event) {
   event.preventDefault();
 
-  // let data = getFormFields(event.target);
-  api.update(store.user.id, store.athlete.given_name, store.athlete.surname, store.athlete.date_of_birth)
+  let data = getFormFields(event.target);
+  api.update(store.user.id, data)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError);
 };

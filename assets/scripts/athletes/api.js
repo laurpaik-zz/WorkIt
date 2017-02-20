@@ -14,18 +14,14 @@ const create = function (data) {
   });
 };
 
-const update = function (id, given_name, surname, date_of_birth) {
+const update = function (id, data) {
   return $.ajax({
     url: config.apiOrigin + '/athletes/' + id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
-    data: {
-      given_name: given_name,
-      surname: surname,
-      date_of_birth: date_of_birth,
-    }
+    data,
   });
 };
 
