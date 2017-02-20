@@ -13,7 +13,6 @@ const onCreateAthlete = function (event) {
   api.create(data)
     .then((response) => {
       store.athlete = response.athlete;
-      console.log(store.athlete);
     })
     .then(ui.onCreateSuccess)
     .catch(ui.onError);
