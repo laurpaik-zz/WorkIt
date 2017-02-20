@@ -9,10 +9,12 @@ const getFormFields = require('../../../lib/get-form-fields');
 const onCreateLog = function (event) {
   event.preventDefault();
 
+  $('#hidden-athlete').val(store.user.id);
   let data = getFormFields(event.target);
   api.create(data)
     .then((response) => {
       store.log = response.log;
+      return store.log;
     })
     .then(ui.onCreateSuccess)
     .catch(ui.onError);
