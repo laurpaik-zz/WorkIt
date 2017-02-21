@@ -11,11 +11,6 @@ const addHandlers = () => {
     $('#sign-up').show();
     $('#sign-out').hide();
     $('#change-password').hide();
-    $('#board').hide();
-    $('.banner').hide();
-    $('#game-search').hide();
-    $('#reset').hide();
-    $('#begin').hide();
   });
 };
 
