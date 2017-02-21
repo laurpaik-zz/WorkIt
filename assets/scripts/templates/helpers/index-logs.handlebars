@@ -1,7 +1,25 @@
-{{#each logs as |log|}}
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Workout</th>
+  </tr>
+</thead>
+<tbody>
+  {{#each logs as |log|}}
+  <tr data-id="{{log.id}}">
+    <th scope="row">{{log.id}}</th>
+    <td>{{log.date_completed}}</td>
+    <td>{{log.workout.name}}</td>
+  </tr>
+  {{/each}}
+</tbody>
+
+
+<!-- {{#each logs as |log|}}
 
   <ul data-id="{{log.id}}">
     <li><h1 data-id="{{log.id}}"> <small>date: {{log.date_completed}}, workout: {{log.workout.name}}, athlete: {{log.athlete.given_name}} {{log.athlete.surname}}</small></h1></li>
   </ul>
 
-{{/each}}
+{{/each}} -->
