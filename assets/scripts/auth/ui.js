@@ -16,8 +16,6 @@ const signInSuccess = (data) => {
   $('#sign-up').hide();
   $('#change-password').show();
   $('#sign-out').show();
-  $('#begin').show();
-  $('#game-search').show();
   $('#search-result').show();
 };
 
