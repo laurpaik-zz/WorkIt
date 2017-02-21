@@ -20,20 +20,29 @@ const onCreateLog = function (event) {
     .catch(ui.onError);
 };
 
-const onGetLogs = function (event) {
+const onIndexLogs = function (event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
+  // let data = getFormFields(event.target);
+  api.index()
+  .then(ui.onSuccess)
+  .catch(ui.onError);
 
-  if (data.log.id.length === 0) {
-    api.index()
-    .then(ui.onSuccess)
-    .catch(ui.onError);
-  } else {
-    api.show(data.log.id)
-    .then(ui.onSuccess)
-    .catch(ui.onError);
-  }
 };
+
+// const onGetLogs = function (event) {
+//   event.preventDefault();
+//   let data = getFormFields(event.target);
+//
+//   if (data.log.id.length === 0) {
+//     api.index()
+//     .then(ui.onSuccess)
+//     .catch(ui.onError);
+//   } else {
+//     api.show(data.log.id)
+//     .then(ui.onSuccess)
+//     .catch(ui.onError);
+//   }
+// };
 
 const onDeleteLog = function (event) {
   event.preventDefault();
@@ -54,14 +63,14 @@ const onUpdateLog = function (event) {
 };
 
 const addHandlers = () => {
-  $('#log-search').on('submit', onGetLogs);
+  $('#sign-in').on('submit', onIndexLogs);
   $('#log-destroy').on('submit', onDeleteLog);
   $('#edit-log').on('submit', onUpdateLog);
   $('#post-log').on('submit', onCreateLog);
 };
 
 module.exports = {
-  onGetLogs,
+  onIndexLogs,
   onDeleteLog,
   onUpdateLog,
   onCreateLog,
