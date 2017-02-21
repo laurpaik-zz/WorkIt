@@ -8,13 +8,18 @@ const onSuccess = function (data) {
     console.log(data.log);
   } else {
     console.table(data.logs);
-    $('.view').css('display', 'initial');
-    $('.view').text('');
+    $('#view-logs').css('display', 'initial');
 
-    let indexLogsHtml = indexLogsHandlebars({ logs: data.log });
-    $('.view').html(indexLogsHtml);
+    let indexLogsHtml = indexLogsHandlebars({ logs: data.logs });
+    $('.table').html(indexLogsHtml);
   }
 };
+
+// const onIndexSuccess = function (data) {
+//   if (data.logs) {
+//
+//   }
+// }
 
 const onError = function (response) {
   console.error(response);
