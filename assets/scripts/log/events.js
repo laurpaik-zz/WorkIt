@@ -6,10 +6,19 @@ const store = require('../store');
 
 const getFormFields = require('../../../lib/get-form-fields');
 
+const onIndexLogs = function (event) {
+  event.preventDefault();
+  // let data = getFormFields(event.target);
+  api.index()
+  .then(ui.onSuccess)
+  .catch(ui.onError);
+
+};
+
 const onCreateLog = function (event) {
   event.preventDefault();
 
-  $('#hidden-athlete').val(store.athlete.id);
+  $('#hidden-athlete').val(store.user.id);
   let data = getFormFields(event.target);
   api.create(data)
     .then((response) => {
@@ -18,15 +27,6 @@ const onCreateLog = function (event) {
     })
     .then(ui.onCreateSuccess)
     .catch(ui.onError);
-};
-
-const onIndexLogs = function (event) {
-  event.preventDefault();
-  // let data = getFormFields(event.target);
-  api.index()
-  .then(ui.onSuccess)
-  .catch(ui.onError);
-
 };
 
 // const onGetLogs = function (event) {
@@ -64,9 +64,18 @@ const onUpdateLog = function (event) {
 
 const addHandlers = () => {
   $('#sign-in').on('submit', onIndexLogs);
-  $('#log-destroy').on('submit', onDeleteLog);
-  $('#edit-log').on('submit', onUpdateLog);
-  $('#post-log').on('submit', onCreateLog);
+  $('#log-destroy').on('submit', function () {
+    onDeleteLog(event);
+    onIndexLogs(event);
+  });
+  $('#edit-log').on('submit', function () {
+    onUpdateLog(event);
+    onIndexLogs(event);
+  });
+  $('#post-log').on('submit', function () {
+    onCreateLog(event);
+    onIndexLogs(event);
+  });
 };
 
 module.exports = {
