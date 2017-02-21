@@ -7,7 +7,6 @@ const success = (data) => {
 
 const signInSuccess = (data) => {
   if (data) {
-
   }
   $('#enter-password').val('sign in');
   $('#sign-up-button').val('sign up');
@@ -16,7 +15,11 @@ const signInSuccess = (data) => {
   $('#sign-up').hide();
   $('#change-password').show();
   $('#sign-out').show();
-  $('#search-result').show();
+  $('#post-log').show();
+  // $('#log-search').show();
+  $('#edit-log').show();
+  $('#log-destroy').show();
+  $('#edit-athlete').show();
 };
 
 const failure = (error) => {
