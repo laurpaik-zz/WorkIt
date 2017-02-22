@@ -120,6 +120,7 @@
 
       <form class='update-athlete' id="edit-athlete">
         <fieldset>
+          <legend>Update Athlete Profile</legend>
           <div class="form-group">
             <input type="text" name="athlete[given_name]" class="inputs" placeholder="Given Name">
             <input type="text" name="athlete[surname]" class="inputs" placeholder="Surname">
@@ -145,12 +146,14 @@
       </form> -->
 
       <div class="view" id="view-workouts">
+        <legend>Our Workouts</legend>
         <table class="table" id="workit">
         </table>
       </div>
 
       <form class='create-log' id="post-log">
         <fieldset>
+          <legend>Log your workout!</legend>
           <div class="form-group">
             <input type="date" name="log[date_completed]" class="inputs" placeholder="Date">
             <input type="text" name="log[workout_id]" class="inputs" placeholder="Workout ID">
@@ -163,6 +166,7 @@
 
       <form class='update-log' id="edit-log">
         <fieldset>
+          <legend>Edit your logged workout!</legend>
           <div class="form-group">
             <input type="text" name="log[id]" class="inputs" placeholder="ID">
             <input type="date" name="log[date_completed]">
@@ -175,6 +179,7 @@
 
     <form class='delete-log' id="log-destroy">
       <fieldset>
+        <legend>Delete your logged workout?</legend>
         <div class="form-group">
           <input type="text" name="log[id]" class="inputs" placeholder="Delete Resource ID Here">
         </div>
@@ -184,6 +189,7 @@
     </form>
 
     <div class="view" id="view-logs">
+      <legend>Everyone's workout history</legend>
       <table class="table" id="world">
       </table>
     </div>
@@ -195,6 +201,7 @@
     </form> -->
 
     <div class="view" id="view-my-logs">
+      <legend>Your workout history</legend>
       <table class="table" id="me">
       </table>
     </div>
