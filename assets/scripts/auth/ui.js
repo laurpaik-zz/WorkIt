@@ -23,6 +23,12 @@ const signInSuccess = (data) => {
   $('#my-logs').show();
 };
 
+const changePwSuccess = (data) => {
+  if (data) {
+  }
+  $('#changePwSuccess').val('password changed!')
+};
+
 const changePwFailure = (error) => {
   console.error(error);
   $('#changepw').val('please try again.');
@@ -48,6 +54,7 @@ const emailFailure = (error) => {
 
 module.exports = {
   changePwFailure,
+  changePwSuccess,
   success,
   signInFailure,
   signInSuccess,
