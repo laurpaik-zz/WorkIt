@@ -18,16 +18,19 @@ const onCreateError = function (response) {
 
 const onDeleteSuccess = function () {
   $('#delete-log-warning').text('');
+  $('.inputs').val('');
 };
 
 const onUpdateSuccess = function (data) {
   if (data) {
   }
   $('#update-log-warning').text('');
+  $('.inputs').val('');
 };
 
 const onCreateSuccess =function() {
   $('#create-log-warning').text('');
+  $('.inputs').val('');
 };
 
 const onDeleteError = function (response) {
