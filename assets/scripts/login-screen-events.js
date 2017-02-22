@@ -10,6 +10,7 @@ const addHandlers = () => {
   $('#edit-log').hide();
   $('#log-destroy').hide();
   $('#edit-athlete').hide();
+  $('#my-logs').hide();
 
 //on signing out, goes back to original sign in page
   $('#sign-out').on('submit', () => {
@@ -24,7 +25,10 @@ const addHandlers = () => {
     $('#log-destroy').hide();
     $('#edit-athlete').hide();
     $('#view-logs').css('display', 'none');
+    $('#view-my-logs').css('display', 'none');
     $('.table').html();
+    $('#my-logs').hide();
+    $('#athleteDOB').val("2000-01-01");
   });
 };
 

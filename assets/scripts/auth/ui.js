@@ -20,6 +20,7 @@ const signInSuccess = (data) => {
   $('#edit-log').show();
   $('#log-destroy').show();
   $('#edit-athlete').show();
+  $('#my-logs').show();
 };
 
 const changePwFailure = (error) => {
