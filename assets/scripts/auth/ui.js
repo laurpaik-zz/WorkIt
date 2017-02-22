@@ -27,6 +27,7 @@ const changePwSuccess = (data) => {
   if (data) {
   }
   $('#changePwSuccess').text('password changed!');
+  $('#changepw').val('Change');
 };
 
 const changePwFailure = (error) => {
