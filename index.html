@@ -20,7 +20,7 @@
               Email
             </label>
             <div class="email-input">
-              <input type="text" name="credentials[email]" class="inputs" placeholder="Email">
+              <input type="text" name="credentials[email]" class="inputs required" placeholder="Email">
             </div>
           </div>
           <div class="password-label">
@@ -28,7 +28,7 @@
               Password
             </label>
             <div class="password-input">
-              <input type="password" name="credentials[password]" class="inputs" placeholder="Password">
+              <input type="password" name="credentials[password]" class="inputs required" placeholder="Password">
             </div>
           </div>
           <div class="password-label">
@@ -36,13 +36,28 @@
               Password Confirmation
             </label>
             <div class="password-input">
-              <input type="password" name="credentials[password_confirmation]" class="inputs" placeholder="Confirm Password">
+              <input type="password" name="credentials[password_confirmation]" class="inputs required" placeholder="Confirm Password">
             </div>
           </div>
           <div class="form-group">
-            <input type="text" name="athlete[given_name]" placeholder="Given Name">
-            <input type="text" name="athlete[surname]" placeholder="Surname">
-            <input type="date" name="athlete[date_of_birth]">
+            <div class="athlete-input">
+            <label>
+              Given Name
+            </label>
+            <input type="text" name="athlete[given_name]"  class="inputs required" placeholder="Given Name">
+          </div>
+            <div class="athlete-input">
+            <label>
+              Surname
+            </label>
+            <input type="text" name="athlete[surname]"  class="inputs required" placeholder="Surname">
+          </div>
+            <div class="athlete-input">
+            <label>
+              Date of Birth
+            </label>
+            <input type="date" name="athlete[date_of_birth]" class="inputs" value="2000-01-01">
+          </div>
           </div>
           <input type="submit" name="submit" id="sign-up-button" value="Sign Up">
         </fieldset>
