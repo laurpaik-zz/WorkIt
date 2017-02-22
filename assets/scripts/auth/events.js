@@ -13,8 +13,10 @@ const onSignUp = function (event) {
   event.preventDefault();
 
   let data = getFormFields(event.target);
-
   api.signUp(data)
+    .then((response) => {
+      store.athlete = response.athlete;
+    })
     .then(ui.signUpSuccess)
     .catch(ui.emailFailure)
     ;
