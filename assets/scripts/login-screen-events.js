@@ -33,6 +33,7 @@ const addHandlers = () => {
     $('.table').html();
     $('#my-logs').hide();
     $('#athleteDOB').val("2000-01-01");
+    $('#changepw').val('Change');
   });
 };
 
