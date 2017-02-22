@@ -1,0 +1,14 @@
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+</thead>
+<tbody>
+  {{#each workouts as |workout|}}
+  <tr data-id="{{workout.id}}">
+    <th scope="row">{{workout.id}}</th>
+    <td>{{workout.name}}</td>
+  </tr>
+  {{/each}}
+</tbody>
