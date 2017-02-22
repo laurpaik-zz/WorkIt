@@ -11,6 +11,9 @@ const addHandlers = () => {
   $('#log-destroy').hide();
   $('#edit-athlete').hide();
   $('#my-logs').hide();
+  $('#view-logs').css('display', 'none');
+  $('#view-my-logs').css('display', 'none');
+  $('#view-workouts').css('display', 'none');
 
 //on signing out, goes back to original sign in page
   $('#sign-out').on('submit', () => {
