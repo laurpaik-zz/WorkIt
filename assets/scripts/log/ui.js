@@ -1,6 +1,7 @@
 'use strict';
 
 const indexLogsHandlebars = require('../templates/helpers/index-logs.handlebars');
+const showLogsHandlebars = require('../templates/helpers/show-logs.handlebars');
 
 const onSuccess = function (data) {
   //  debugger;
@@ -9,37 +10,53 @@ const onSuccess = function (data) {
     $('#view-logs').css('display', 'initial');
 
     let indexLogsHtml = indexLogsHandlebars({ logs: data.logs });
-    $('.table').html(indexLogsHtml);
+    $('#world').html(indexLogsHtml);
   }
 };
 
-// const onIndexSuccess = function (data) {
-//   if (data.logs) {
-//
-//   }
-// }
-
-const onError = function (response) {
+const onCreateError = function (response) {
   console.error(response);
+  $('#create-log-warning').text('Uh oh! Did you fill in all the blanks? Does the workout you want exist?');
 };
 
 const onDeleteSuccess = function () {
-  console.log('Log was successfully deleted.');
+  $('#delete-log-warning').text('');
 };
 
 const onUpdateSuccess = function (data) {
   if (data) {
   }
+  $('#update-log-warning').text('');
 };
 
 const onCreateSuccess =function() {
-  console.log('Successful log');
+  $('#create-log-warning').text('');
+};
+
+const onDeleteError = function (response) {
+  console.error(response);
+  $('#delete-log-warning').text("You can't delete something you didn't make!");
+};
+
+const onUpdateError = function (response) {
+  console.error(response);
+  $('#update-log-warning').text("You can't update something you didn't make!");
+};
+
+const onShowSuccess = function(data){
+  $('#view-my-logs').css('display', 'initial');
+
+  let showLogsHtml = showLogsHandlebars({ logs: data.logs });
+  $('#me').html(showLogsHtml);
 };
 
 module.exports = {
   onSuccess,
-  onError,
+  onDeleteError,
+  onCreateError,
+  onUpdateError,
   onDeleteSuccess,
   onUpdateSuccess,
   onCreateSuccess,
+  onShowSuccess,
 };
