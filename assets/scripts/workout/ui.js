@@ -1,5 +1,7 @@
 'use strict';
 
+const indexWorkoutsHandlebars = require('../templates/helpers/index-workouts.handlebars');
+
 const onSuccess = function (data) {
   if (data.workout) {
     console.log(data.workout);
@@ -9,9 +11,10 @@ const onSuccess = function (data) {
 };
 
 const onIndexSuccess = function (data) {
-  if (data.workouts) {
-    console.log(data.workouts);
-  }
+  $('#workouts').css('display', 'initial');
+
+  let indexWorkoutsHtml = indexWorkoutsHandlebars({ workouts: data.workouts });
+  $('#workit').html(indexWorkoutsHtml);
 };
 
 const onGetSuccess = function (data) {
