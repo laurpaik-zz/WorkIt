@@ -14,6 +14,9 @@ const onSuccess = function (data) {
 const onCreateError = function (response) {
   console.error(response);
   $('#create-log-warning').text('Uh oh! Did you fill in all the blanks? Does the workout you want exist?');
+  $('#delete-log-warning').text('');
+  $('#update-log-warning').text('');
+  $('#update-athlete-warning').text('');
 };
 
 const onDeleteSuccess = function () {
@@ -45,11 +48,17 @@ const onCreateSuccess =function() {
 const onDeleteError = function (response) {
   console.error(response);
   $('#delete-log-warning').text("You can't delete something you didn't make!");
+  $('#create-log-warning').text('');
+  $('#update-log-warning').text('');
+  $('#update-athlete-warning').text('');
 };
 
 const onUpdateError = function (response) {
   console.error(response);
   $('#update-log-warning').text("You can't update something you didn't make!");
+  $('#create-log-warning').text('');
+  $('#delete-log-warning').text('');
+  $('#update-athlete-warning').text('');
 };
 
 const onShowSuccess = function(data){
