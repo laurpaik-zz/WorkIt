@@ -26,6 +26,7 @@ const addHandlers = () => {
     $('#edit-athlete').hide();
     $('#view-logs').css('display', 'none');
     $('#view-my-logs').css('display', 'none');
+    $('#view-workouts').css('display', 'none');
     $('.table').html();
     $('#my-logs').hide();
     $('#athleteDOB').val("2000-01-01");
