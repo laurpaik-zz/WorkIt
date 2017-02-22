@@ -15,6 +15,13 @@ const onIndexLogs = function (event) {
 
 };
 
+const onShowLogs = function (event) {
+  event.preventDefault();
+  api.show()
+  .then(ui.onShowSuccess)
+  .catch(ui.onShowError);
+};
+
 const onCreateLog = function (event) {
   event.preventDefault();
 
@@ -26,7 +33,7 @@ const onCreateLog = function (event) {
       return store.log;
     })
     .then(ui.onCreateSuccess)
-    .catch(ui.onError);
+    .catch(ui.onCreateError);
 };
 
 // const onGetLogs = function (event) {
@@ -50,7 +57,7 @@ const onDeleteLog = function (event) {
   let data = getFormFields(event.target);
   api.destroy(data.log.id)
     .then(ui.onDeleteSuccess)
-    .catch(ui.onError);
+    .catch(ui.onDeleteError);
 };
 
 const onUpdateLog = function (event) {
@@ -59,11 +66,12 @@ const onUpdateLog = function (event) {
   let data = getFormFields(event.target);
   api.update(data.log.id, data)
     .then(ui.onUpdateSuccess)
-    .catch(ui.onError);
+    .catch(ui.onUpdateError);
 };
 
 const addHandlers = () => {
   $('#sign-in').on('submit', onIndexLogs);
+  $('#my-logs').on('submit', onShowLogs);
   $('#log-destroy').on('submit', function () {
     onDeleteLog(event);
     onIndexLogs(event);
@@ -83,5 +91,6 @@ module.exports = {
   onDeleteLog,
   onUpdateLog,
   onCreateLog,
+  onShowLogs,
   addHandlers,
 };
