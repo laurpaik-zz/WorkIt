@@ -25,29 +25,7 @@ const update = function (id, data) {
   });
 };
 
-const show = function (id) {
-  return $.ajax({
-    url: config.apiOrigin + '/athletes/' + id,
-    method: 'GET',
-    headers: {
-      Authorization: `Token token=${store.user.token}`,
-    },
-  });
-};
-
-const index = function () {
-  return $.ajax({
-    url: config.apiOrigin + '/athletes',
-    method: 'GET',
-    headers: {
-      Authorization: `Token token=${store.user.token}`,
-    },
-  });
-};
-
 module.exports = {
   create,
   update,
-  index,
-  show,
 };
