@@ -22,8 +22,9 @@ const signInSuccess = (data) => {
   $('#edit-athlete').show();
 };
 
-const failure = (error) => {
+const changePwFailure = (error) => {
   console.error(error);
+  $('#changepw').val('please try again.');
 };
 
 const signInFailure = (error) => {
@@ -45,7 +46,7 @@ const emailFailure = (error) => {
 
 
 module.exports = {
-  failure,
+  changePwFailure,
   success,
   signInFailure,
   signInSuccess,

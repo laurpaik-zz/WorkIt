@@ -40,7 +40,7 @@ const onChangePassword = function (event) {
 
   api.changePassword(data)
     .then(ui.success)
-    .catch(ui.failure)
+    .catch(ui.changePwFailure)
     ;
 };
 
