@@ -1,0 +1,16 @@
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Workout</th>
+  </tr>
+</thead>
+<tbody>
+  {{#each logs as |log|}}
+  <tr data-id="{{log.id}}">
+    <th scope="row">{{log.id}}</th>
+    <td>{{log.date_completed}}</td>
+    <td>{{log.workout.name}}</td>
+  </tr>
+  {{/each}}
+</tbody>
