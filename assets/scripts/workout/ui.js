@@ -11,7 +11,7 @@ const onSuccess = function (data) {
 };
 
 const onIndexSuccess = function (data) {
-  $('#workouts').css('display', 'initial');
+  $('#view-workouts').css('display', 'initial');
 
   let indexWorkoutsHtml = indexWorkoutsHandlebars({ workouts: data.workouts });
   $('#workit').html(indexWorkoutsHtml);
