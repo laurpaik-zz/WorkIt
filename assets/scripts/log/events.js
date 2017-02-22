@@ -6,8 +6,8 @@ const store = require('../store');
 
 const getFormFields = require('../../../lib/get-form-fields');
 
-const onIndexLogs = function (event) {
-  event.preventDefault();
+const onIndexLogs = function () {
+  // event.preventDefault();
   // let data = getFormFields(event.target);
   api.index()
   .then(ui.onSuccess)
@@ -15,8 +15,8 @@ const onIndexLogs = function (event) {
 
 };
 
-const onShowLogs = function (event) {
-  event.preventDefault();
+const onShowLogs = function () {
+  // event.preventDefault();
   api.show()
   .then(ui.onShowSuccess)
   .catch(ui.onShowError);
@@ -33,7 +33,8 @@ const onCreateLog = function (event) {
       return store.log;
     })
     .then(ui.onCreateSuccess)
-    .then(onIndexLogs(event))
+    .then(onIndexLogs)
+    .then(onShowLogs)
     .catch(ui.onCreateError);
 };
 
@@ -58,7 +59,8 @@ const onDeleteLog = function (event) {
   let data = getFormFields(event.target);
   api.destroy(data.log.id)
     .then(ui.onDeleteSuccess)
-    .then(onIndexLogs(event))
+    .then(onIndexLogs)
+    .then(onShowLogs)
     .catch(ui.onDeleteError);
 };
 
@@ -68,13 +70,14 @@ const onUpdateLog = function (event) {
   let data = getFormFields(event.target);
   api.update(data.log.id, data)
     .then(ui.onUpdateSuccess)
-    .then(onIndexLogs(event))
+    .then(onIndexLogs)
+    .then(onShowLogs)
     .catch(ui.onUpdateError);
 };
 
 const addHandlers = () => {
   $('#sign-in').on('submit', onIndexLogs);
-  $('#my-logs').on('submit', onShowLogs);
+  // $('#sign-in').on('submit', onShowLogs);
   $('#log-destroy').on('submit', function () {
     onDeleteLog(event);
     // onIndexLogs(event);
