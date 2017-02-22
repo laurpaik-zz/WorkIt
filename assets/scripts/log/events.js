@@ -33,6 +33,7 @@ const onCreateLog = function (event) {
       return store.log;
     })
     .then(ui.onCreateSuccess)
+    .then(onIndexLogs(event))
     .catch(ui.onCreateError);
 };
 
@@ -57,6 +58,7 @@ const onDeleteLog = function (event) {
   let data = getFormFields(event.target);
   api.destroy(data.log.id)
     .then(ui.onDeleteSuccess)
+    .then(onIndexLogs(event))
     .catch(ui.onDeleteError);
 };
 
@@ -66,6 +68,7 @@ const onUpdateLog = function (event) {
   let data = getFormFields(event.target);
   api.update(data.log.id, data)
     .then(ui.onUpdateSuccess)
+    .then(onIndexLogs(event))
     .catch(ui.onUpdateError);
 };
 
@@ -74,15 +77,15 @@ const addHandlers = () => {
   $('#my-logs').on('submit', onShowLogs);
   $('#log-destroy').on('submit', function () {
     onDeleteLog(event);
-    onIndexLogs(event);
+    // onIndexLogs(event);
   });
   $('#edit-log').on('submit', function () {
     onUpdateLog(event);
-    onIndexLogs(event);
+    // onIndexLogs(event);
   });
   $('#post-log').on('submit', function () {
     onCreateLog(event);
-    onIndexLogs(event);
+    // onIndexLogs(event);
   });
 };
 
