@@ -17,20 +17,29 @@ const onCreateError = function (response) {
 };
 
 const onDeleteSuccess = function () {
-  $('#delete-log-warning').text('');
+  $('#delete-log-warning').text('Delete Successful!');
   $('.inputs').val('');
+  $('#create-log-warning').text('');
+  $('#update-log-warning').text('');
+  $('#update-athlete-warning').text('');
 };
 
 const onUpdateSuccess = function (data) {
   if (data) {
   }
-  $('#update-log-warning').text('');
+  $('#update-log-warning').text('Update Successful!');
   $('.inputs').val('');
+  $('#create-log-warning').text('');
+  $('#delete-log-warning').text('');
+  $('#update-athlete-warning').text('');
 };
 
 const onCreateSuccess =function() {
-  $('#create-log-warning').text('');
+  $('#create-log-warning').text('Log created!');
   $('.inputs').val('');
+  $('#delete-log-warning').text('');
+  $('#update-log-warning').text('');
+  $('#update-athlete-warning').text('');
 };
 
 const onDeleteError = function (response) {
