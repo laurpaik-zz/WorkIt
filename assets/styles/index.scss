@@ -4,3 +4,17 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .view {
   color: blue;
 }
+
+#sign-up {
+  float: left;
+  padding: 50px;
+}
+
+#sign-in {
+  float: left;
+  padding: 50px;
+}
+
+#logout-info {
+  float: right;
+}
