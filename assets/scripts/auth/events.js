@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 
 const api = require('./api');
 const ui = require('./ui');
+const logEvents = require('../log/events');
 
 const store = require('../store');
 
@@ -29,6 +30,7 @@ const onSignIn = function (event) {
       return store.user;
     })
     .then(ui.signInSuccess)
+    .then(logEvents.onShowLogs)
     .catch(ui.signInFailure)
     ;
 };
