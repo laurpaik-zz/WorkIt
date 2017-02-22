@@ -18,8 +18,8 @@ const ui = require('./ui.js');
 //     .catch(ui.onError);
 // };
 
-const onGetWorkouts = function (event) {
-  event.preventDefault();
+const onGetWorkouts = function () {
+  // event.preventDefault();
   // let data = getFormFields(event.target);
   //
   // if (data.workout.id.length === 0) {
@@ -33,12 +33,12 @@ const onGetWorkouts = function (event) {
   // }
 };
 
-const addHandlers = () => {
-  $('#sign-in').on('submit', onGetWorkouts);
-};
+// const addHandlers = () => {
+//   $('#sign-in').on('submit', onGetWorkouts);
+// };
 
 module.exports = {
   // onCreateWorkout,
   onGetWorkouts,
-  addHandlers,
+  // addHandlers,
 };
