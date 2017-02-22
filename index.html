@@ -56,7 +56,7 @@
             <label>
               Date of Birth
             </label>
-            <input type="date" name="athlete[date_of_birth]" class="inputs" id="athleteDOB" value="2000-01-01">
+            <input type="date" name="athlete[date_of_birth]" class="inputs" id="athleteDOB" value="">
           </div>
           </div>
           <input type="submit" name="submit" id="sign-up-button" value="Sign Up">
@@ -138,6 +138,12 @@
         </table>
       </div>
 
+      <div class="view" id="view-my-logs">
+        <legend>Your workout history</legend>
+        <table class="table" id="me">
+        </table>
+      </div>
+
       <form class='create-log' id="post-log">
         <fieldset>
           <legend>Log your workout!</legend>
@@ -178,12 +184,6 @@
     <div class="view" id="view-logs">
       <legend>Everyone's workout history</legend>
       <table class="table" id="world">
-      </table>
-    </div>
-
-    <div class="view" id="view-my-logs">
-      <legend>Your workout history</legend>
-      <table class="table" id="me">
       </table>
     </div>
 
