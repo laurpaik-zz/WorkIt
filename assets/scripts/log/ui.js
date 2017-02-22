@@ -5,13 +5,10 @@ const showLogsHandlebars = require('../templates/helpers/show-logs.handlebars');
 
 const onSuccess = function (data) {
   //  debugger;
-  if (data.log) {
-  } else {
-    $('#view-logs').css('display', 'initial');
+  $('#view-logs').css('display', 'initial');
 
-    let indexLogsHtml = indexLogsHandlebars({ logs: data.logs });
-    $('#world').html(indexLogsHtml);
-  }
+  let indexLogsHtml = indexLogsHandlebars({ logs: data.logs });
+  $('#world').html(indexLogsHtml);
 };
 
 const onCreateError = function (response) {
