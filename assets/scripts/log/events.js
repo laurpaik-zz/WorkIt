@@ -76,7 +76,7 @@ const onUpdateLog = function (event) {
 };
 
 const addHandlers = () => {
-  $('#sign-in').on('submit', onIndexLogs);
+  // $('#sign-in').on('submit', onIndexLogs);
   // $('#sign-in').on('submit', onShowLogs);
   $('#log-destroy').on('submit', function () {
     onDeleteLog(event);
