@@ -22,6 +22,11 @@
 - In the long run, I really want to add a lifts element to my app. It would require another model, 'Sets', which would belong to workouts (workouts would have many sets). That said, I am a long way from this last goal. If you're interested in the steps in between, I broke it down in my user stories below.
 - Finally, I want my website to be pretty.
 
+### Built with
+- JavaScript
+- jQuery.ajax
+- handlebars
+
 ### Links to my planning process
 - [Back-End Repo](https://github.com/laurpaik/WorkIt-API)
 - [User Stories](https://docs.google.com/document/d/1VxeEJti73E9d70wlD31QKAdRUUaPvNK-REMGy8Z6_P0/edit?usp=sharing)
@@ -30,10 +35,9 @@
 - [Current ERD (Entity-Relationship Diagram)](https://goo.gl/photos/rW2YYa78aE4abpFr8)
 
 ### Shout-outs
-- [Max](https://github.com/doremaxime), who helped me fix certain bugs on the front-end
-- [Moshe](https://github.com/moshiko1988), who also helped me fix certain bugs on the front-end
+- [Max](https://github.com/doremaxime), [Moshe](https://github.com/moshiko1988), and [Wei](https://github.com/newayliu1), who helped me fix bugs on both the front and back ends.
 - [Bernard](https://github.com/bernardlee), who helped me with simplifying my planning process as well as led me to understand user/athlete creation
-- [Rachel](https://github.com/raq929), who helped me with my issues
+- [Rachel](https://github.com/raq929), who helped me a ton with my issues
 - [Antony](https://github.com/gaand), whose templates I used
 - My former rowing coach, [Brian Dawe](http://www.gotuftsjumbos.com/sports/wcrew/coaches/dawe), whose [website](http://www.jumbocrew.org/index.php) I used for four years and looked to for loose inspiration
 - Concept2, an indoor rowing company that has a similar (but less team-specific) [web app](https://log.concept2.com/login) as Coach Brian's
