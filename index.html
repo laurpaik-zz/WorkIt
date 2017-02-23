@@ -88,7 +88,20 @@
         </fieldset>
       </form>
 
-      <div id="logout-info">
+      <form class='update-athlete' id="edit-athlete">
+        <fieldset>
+          <legend>Update Athlete Profile</legend>
+          <div class="form-group">
+            <input type="text" name="athlete[given_name]" class="inputs" placeholder="Given Name">
+            <input type="text" name="athlete[surname]" class="inputs" placeholder="Surname">
+            <input type="date" name="athlete[date_of_birth]" class="inputs">
+          </div>
+          <button type="submit" class="btn btn-default">Update Athlete Profile</button>
+          <div id="update-athlete-warning" class="warning"></div>
+      </fieldset>
+      </form>
+
+      <div class="logout-div" id="logout-info">
         <form id="change-password">
           <fieldset>
             <legend>Tired of your old password?</legend>
@@ -119,33 +132,33 @@
         </form>
       </div>
 
-      <form class='update-athlete' id="edit-athlete">
-        <fieldset>
-          <legend>Update Athlete Profile</legend>
-          <div class="form-group">
-            <input type="text" name="athlete[given_name]" class="inputs" placeholder="Given Name">
-            <input type="text" name="athlete[surname]" class="inputs" placeholder="Surname">
-            <input type="date" name="athlete[date_of_birth]" class="inputs">
+      <div class="panel panel-default" id="workout-panel">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Our Workouts
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="view container" id="view-workouts">
+            <table class="table" id="workit">
+            </table>
           </div>
-          <button type="submit" class="btn btn-default">Update Athlete Profile</button>
-          <div id="update-athlete-warning" class="warning"></div>
-      </fieldset>
-      </form>
-
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="headingThree">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Our Workouts
-              </a>
-            </h4>
-          </div>
-          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-            <div class="view container" id="view-workouts">
-              <table class="table" id="workit">
-              </table>
-            </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Everyone's Workout History!
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="view container" id="view-logs">
+            <table class="table" id="world">
+            </table>
           </div>
         </div>
       </div>
@@ -159,6 +172,7 @@
       <form class='create-log' id="post-log">
         <fieldset>
           <legend>Log your workout!</legend>
+           (Need help finding your workout id? Check out Our Workouts in the tab above!)
           <div class="form-group">
             <input type="date" name="log[date_completed]" class="inputs" placeholder="Date">
             <input type="text" name="log[workout_id]" class="inputs" placeholder="Workout ID">
@@ -193,11 +207,23 @@
     </fieldset>
     </form>
 
-    <div class="view container" id="view-logs">
-      <legend>Everyone's workout history</legend>
-      <table class="table" id="world">
-      </table>
-    </div>
+    <!-- <div class="panel-group" id="accordionTwo" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+              Everyone's Workout History!
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="view container" id="view-logs">
+            <table class="table" id="world">
+            </table>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
     </body>
 </html>
