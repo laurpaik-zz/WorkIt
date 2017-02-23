@@ -132,10 +132,22 @@
       </fieldset>
       </form>
 
-      <div class="view container" id="view-workouts">
-        <legend>Our Workouts</legend>
-        <table class="table" id="workit">
-        </table>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Our Workouts
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="view container" id="view-workouts">
+              <table class="table" id="workit">
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="view container" id="view-my-logs">
