@@ -1,9 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
-.view {
-  color: blue;
-}
+@import 'assets/styles/colors';
 
 #sign-up {
   float: left;
@@ -15,6 +12,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   padding: 50px;
 }
 
-#logout-info {
+.logout-div {
   float: right;
+}
+
+.update-athlete {
+  float: left;
+}
+
+.panel {
+  clear: both;
 }
