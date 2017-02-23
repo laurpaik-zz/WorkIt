@@ -28,6 +28,7 @@ const changePwSuccess = (data) => {
   if (data) {
   }
   $('#changePwSuccess').text('password changed!');
+  $('.inputs').val('');
   $('#changepw').val('Change');
 };
 
