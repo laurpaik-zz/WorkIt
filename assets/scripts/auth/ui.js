@@ -21,6 +21,7 @@ const signInSuccess = (data) => {
   $('#log-destroy').show();
   $('#edit-athlete').show();
   $('#my-logs').show();
+  $('.panel').show();
 };
 
 const changePwSuccess = (data) => {
