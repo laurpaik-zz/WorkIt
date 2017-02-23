@@ -14,7 +14,7 @@ const addHandlers = () => {
   $('#view-logs').css('display', 'none');
   $('#view-my-logs').css('display', 'none');
   $('#view-workouts').css('display', 'none');
-  $('#accordion').css('display', 'none');
+  $('.panel').hide();
 
 //on signing out, goes back to original sign in page
   $('#sign-out').on('submit', () => {
@@ -31,7 +31,7 @@ const addHandlers = () => {
     $('#view-logs').css('display', 'none');
     $('#view-my-logs').css('display', 'none');
     $('#view-workouts').css('display', 'none');
-    $('#accordion').css('display', 'none');
+    $('.panel').hide();
     $('.table').html();
     $('#my-logs').hide();
     $('#athleteDOB').val("2000-01-01");
