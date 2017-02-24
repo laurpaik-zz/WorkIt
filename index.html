@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>WorkIt</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <form id="sign-up">
+        <fieldset>
+          <legend>sign up</legend>
+          <div class="email-label">
+            <label>
+              Email
+            </label>
+            <div class="email-input">
+              <input type="text" name="credentials[email]" class="inputs required" placeholder="Email">
+            </div>
+          </div>
+          <div class="password-label">
+            <label>
+              Password
+            </label>
+            <div class="password-input">
+              <input type="password" name="credentials[password]" class="inputs required" placeholder="Password">
+            </div>
+          </div>
+          <div class="password-label">
+            <label>
+              Password Confirmation
+            </label>
+            <div class="password-input">
+              <input type="password" name="credentials[password_confirmation]" class="inputs required" placeholder="Confirm Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="athlete-input">
+            <label>
+              Given Name
+            </label>
+            <input type="text" name="athlete[given_name]"  class="inputs required" placeholder="Given Name">
+          </div>
+            <div class="athlete-input">
+            <label>
+              Surname
+            </label>
+            <input type="text" name="athlete[surname]"  class="inputs required" placeholder="Surname">
+          </div>
+            <div class="athlete-input">
+            <label>
+              Date of Birth
+            </label>
+            <input type="date" name="athlete[date_of_birth]" class="inputs" id="athleteDOB" value="">
+          </div>
+          </div>
+          <input type="submit" name="submit" id="sign-up-button" value="Sign Up">
+        </fieldset>
+      </form>
+
+      <form id="sign-in">
+        <fieldset>
+          <legend>sign in</legend>
+          <div class="email-label">
+            <label>
+              Email
+            </label>
+            <div class="email-input">
+              <input type="text" name="credentials[email]" class="inputs" placeholder="Email">
+            </div>
+          </div>
+          <div class="password-label">
+            <label>
+              Password
+            </label>
+            <div class="password-input">
+              <input type="password" name="credentials[password]" class="inputs" placeholder="Password">
+            </div>
+          </div>
+          <div class="password-submit">
+            <input type="submit" name="submit" id="enter-password" value="Sign In">
+          </div>
+        </fieldset>
+      </form>
+
+      <form class='update-athlete' id="edit-athlete">
+        <fieldset>
+          <legend>Update Athlete Profile</legend>
+          <div class="form-group">
+            <input type="text" name="athlete[given_name]" class="inputs" placeholder="Given Name">
+            <input type="text" name="athlete[surname]" class="inputs" placeholder="Surname">
+            <input type="date" name="athlete[date_of_birth]" class="inputs">
+          </div>
+          <button type="submit" class="btn btn-default">Update Athlete Profile</button>
+          <div id="update-athlete-warning" class="warning"></div>
+      </fieldset>
+      </form>
+
+      <div class="logout-div" id="logout-info">
+        <form id="change-password">
+          <fieldset>
+            <legend>Tired of your old password?</legend>
+            <label>
+              Current Password
+            </label>
+            <div class="password-input">
+              <input type="password" name="passwords[old]" class="inputs" placeholder="Old Password">
+            </div>
+            <label>
+              New Password
+            </label>
+            <div class="password-input">
+              <input type="password" name="passwords[new]" class="inputs" placeholder="New Password">
+            </div>
+            <div class="password-submit">
+              <input type="submit" name="submit" value="Change" id="changepw">
+            </div>
+            <div id="changePwSuccess"></div>
+          </fieldset>
+        </form>
+
+        <form id="sign-out">
+          <fieldset>
+            <legend>sign out</legend>
+            <input type="submit" name="submit" value="Sign Out">
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="panel panel-default" id="workout-panel">
+        <div class="panel-heading" role="tab" id="headingTwo">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Our Workouts
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="view container" id="view-workouts">
+            <table class="table" id="workit">
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Everyone's Workout History!
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="view container" id="view-logs">
+            <table class="table" id="world">
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="view container" id="view-my-logs">
+        <legend>Your workout history</legend>
+        <table class="table" id="me">
+        </table>
+      </div>
+
+      <form class='create-log' id="post-log">
+        <fieldset>
+          <legend>Log your workout!</legend>
+           (Need help finding your workout id? Check out Our Workouts in the tab above!)
+          <div class="form-group">
+            <input type="date" name="log[date_completed]" class="inputs" placeholder="Date">
+            <input type="text" name="log[workout_id]" class="inputs" placeholder="Workout ID">
+            <input type="hidden" name="log[athlete_id]" class="inputs" id="hidden-athlete">
+          </div>
+          <button type="submit" class="btn btn-default">Create Log</button>
+          <div id="create-log-warning" class="warning"></div>
+      </fieldset>
+      </form>
+
+      <form class='update-log' id="edit-log">
+        <fieldset>
+          <legend>Edit your logged workout!</legend>
+          <div class="form-group">
+            <input type="text" name="log[id]" class="inputs" placeholder="Log ID">
+            <input type="date" name="log[date_completed]" class="inputs">
+            <input type="text" name="log[workout_id]" class="inputs" placeholder="Workout ID">
+          </div>
+          <button type="submit" class="btn btn-default">Update Log</button>
+          <div id="update-log-warning" class="warning"></div>
+      </fieldset>
+    </form>
+
+    <form class='delete-log' id="log-destroy">
+      <fieldset>
+        <legend>Delete your logged workout?</legend>
+        <div class="form-group">
+          <input type="text" name="log[id]" class="inputs" placeholder="Delete Log ID Here">
+        </div>
+        <button type="submit" class="btn btn-default">Delete Log</button>
+        <div id="delete-log-warning" class="warning"></div>
+    </fieldset>
+    </form>
+
+    </body>
+</html>
