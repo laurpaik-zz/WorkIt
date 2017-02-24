@@ -53,7 +53,9 @@ const emailFailure = (error) => {
   $('#sign-up-button').val('try a different email or check your password');
 };
 
-
+const failure = (error) => {
+  console.error(error);
+};
 
 module.exports = {
   changePwFailure,
@@ -63,4 +65,5 @@ module.exports = {
   signInSuccess,
   signUpSuccess,
   emailFailure,
+  failure,
 };
