@@ -38,6 +38,7 @@ const addHandlers = () => {
     $('#changepw').val('Change');
     $('#changePwSuccess').text('');
     $('.warning').text('');
+    $('.collapse').collapse('hide');
   });
 };
 
